@@ -1,0 +1,32 @@
+.titulo {
+  text-transform: capitalize;
+}
+
+.logo {
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 2px #dbdbdb;
+}
+
+.item-menu {
+  ion-item {
+    .icon {
+      margin-right: 11px;
+    }
+
+    .titulo {
+      span {
+        color: #252f40;
+        font-feature-settings: "clig" off, "liga" off;
+        font-family: 'Barlow';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.1px;
+      }
+    }
+  }
+}
