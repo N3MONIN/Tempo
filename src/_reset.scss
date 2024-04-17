@@ -3,4 +3,10 @@
   :focus {
     outline: none !important;  // 1
   }
+  :host{
+  --background: transparent !important;
+  --background-color: transparent !important;
 }
+
+}
+

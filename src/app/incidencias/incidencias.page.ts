@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../header/header.service';
 
 @Component({
   selector: 'app-incidencias',
@@ -6,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./incidencias.page.scss'],
 })
 export class IncidenciasPage implements OnInit {
-  constructor() { }
+  private url = '/incidencias';
 
+  constructor(private HeaderService: HeaderService) {
+  }
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.HeaderService.setPageContent(this.url, 'Incidencias', 'Incidencias de Empleados');
   }
 
 }

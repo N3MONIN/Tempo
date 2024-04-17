@@ -1,11 +1,15 @@
 <ion-app>
-  <ion-header class="header"> <app-header></app-header> </ion-header>
-
-  <ion-content>
-    <ion-router-outlet></ion-router-outlet>
-  </ion-content>
-
-  <ion-split-pane contentId="main-content">
+  <div class="menu">
     <app-menu></app-menu>
-  </ion-split-pane>
+  </div>
+  <div class="contenido-header">    
+    <app-header></app-header>
+
+    <ion-content>
+      <div id="background">
+        <ion-router-outlet></ion-router-outlet>
+      </div>
+      
+    </ion-content>
+  </div>
 </ion-app>

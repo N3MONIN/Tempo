@@ -1,18 +1,15 @@
-<ion-split-pane contentId="main-content">
-  <ion-menu contentId="main-content">
-    <div class="logo"><img src="assets/img/logo-tempo.png" /></div>
-    <ion-content>
-      <ion-list>
-        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages" class="item-menu">
-          <ion-item [routerLink]="[p.url]" routerDirection="root">
-            <ion-icon slot="start" [name]="p.icon" class="icon"></ion-icon>
-            <ion-label class="titulo">
-              <span>{{p.title}}</span>
-            </ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  <ion-router-outlet id="main-content"></ion-router-outlet>
-</ion-split-pane>
+<div class="logo"><img src="assets/img/logo.png" /></div>
+<div class="lista-menu">
+  <ion-menu-toggle
+    auto-hide="false"
+    *ngFor="let p of appPages"
+    class="item-menu"
+  >
+    <a [routerLink]="[p.url]" routerDirection="root" class="item">
+      <img src="{{p.icon}}" alt="" class="icon">
+      <ion-label class="titulo">
+        <span>{{p.title}}</span>
+      </ion-label>
+    </a>
+  </ion-menu-toggle>
+</div>

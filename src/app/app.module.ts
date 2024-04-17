@@ -6,13 +6,14 @@ import { IonicModule } from "@ionic/angular";
 import {HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { HeaderPage } from "./header/header.page";
+import { HeaderComponent } from "./header/header.page";
 import { MenuPage } from "./menu/menu.page";
+import { HeaderService } from "./header/header.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderPage,
+    HeaderComponent,
     MenuPage,
     
   ],
@@ -25,6 +26,7 @@ import { MenuPage } from "./menu/menu.page";
     CommonModule,
     FormsModule,
   ],
+  providers: [HeaderService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -3,24 +3,35 @@
 }
 
 .logo {
-  height: 96px;
+  height: 93px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: solid 2px #dbdbdb;
+  border-bottom: solid 1px white;
+  img {
+  }
 }
 
-.item-menu {
-  ion-item {
+.lista-menu{
+  padding: 0px 28px;
+  .item-menu {
+  padding: 12px 16px;
+  a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
     .icon {
       margin-right: 11px;
     }
 
     .titulo {
+      margin: 12px 0px;
       span {
         color: #252f40;
         font-feature-settings: "clig" off, "liga" off;
-        font-family: 'Barlow';
+        font-family: "Barlow";
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -30,3 +41,4 @@
     }
   }
 }
+

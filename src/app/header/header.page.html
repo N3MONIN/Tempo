@@ -1,36 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-grid class="cabecera-padre">
-      <ion-row class="cabecera">
-        <ion-col size="2" class="col-1">
-          <ion-title></ion-title>
-        </ion-col>
+    <div class="cabecera-padre">
 
-        <ion-col size="7.4" class="col-2">
-          <h1 class="titulo">{{ pageTitle }}</h1>
-          <p class="subtitulo">{{ pageSubtitle }}</p>
-        </ion-col>
+        <div class="col-titulo">
+          <h2 class="titulo">{{ title }}</h2>
+          <p class="subtitulo">{{ subtitle }}</p>
+        </div>
 
-        <ion-col size="1" class="col-3">
-          <img src="assets/img/icon-ajustes.svg" />
-          <img src="assets/img/icon-alertas.svg" />
-        </ion-col>
+        <div class="col-controles">
+          <img src="assets/icons/icon-ajustes.svg" class="ico-ajustes"/>
+          <img src="assets/icons/icon-alertas.svg" class="ico-alerta"/>
+        </div>
 
-        <ion-col size="1.6" class="col-4">
+        <div class="col-usuario">
           <div class="usuario">
             <div class="datos">
               <p class="empresa">{{ companyName }}</p>
               <p class="nombre">{{ employeeName }}</p>
             </div>
-              <ion-avatar slot="start" class="avatar">
-                <img [src]="employeeAvatar" />
-              </ion-avatar>
+            <ion-avatar slot="start" class="avatar">
+              <img [src]="employeeAvatar" />
+            </ion-avatar>
           </div>
           <ion-select interface="popover" class="selector">
             <ion-select-option>Cerrar sesión</ion-select-option>
           </ion-select>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
-</ion-header>
+        </div>
+    </div>
+ 

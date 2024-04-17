@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../header/header.service';
 
 @Component({
   selector: 'app-calendario-laboral',
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class CalendarioLaboralPage implements OnInit {
 
   
-  constructor() { }
+  private url = '/calendario-laboral';
 
+  constructor(private HeaderService: HeaderService) {
+  }
   ngOnInit() {
   }
+
+  ionViewWillEnter() {
+    this.HeaderService.setPageContent(this.url, 'Calendario Laboral', 'Calendario Laboral Empleados');
+  }
+
+
 
 }

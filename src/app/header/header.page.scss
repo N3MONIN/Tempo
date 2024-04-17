@@ -1,29 +1,25 @@
+:host {
+
+}
 ::ng-deep {
-  .header-md {
+  
 
-    
-
-    &::after{
-        display: none;
-    }
-
-    border-bottom: solid 1px #dbdbdb;
+    border-bottom: solid 1px white;
     .cabecera-padre{
-        padding: 15px 28px;
-     .cabecera {
+      padding: 20px 28px;
       display: flex;
       align-items: center;
-      .col-1 {
-      }
-
-      .col-2 {
-        h1.titulo {
+      
+      .col-titulo {
+        width: 77%;
+        h2.titulo {
           color: #252f40;
           font-family: "Barlow";
           font-size: 24px;
           font-style: normal;
           font-weight: 600;
           line-height: normal;
+          margin-bottom: 4px;
         }
 
         p.subtitulo {
@@ -38,10 +34,15 @@
         }
       }
 
-      .col-3 {
+      .col-controles {
+        width: 8%;
+
+        .ico-alertas{
+          border-right: 1px solid white;
+        }
       }
 
-      .col-4 {
+      .col-usuario {
         display: flex;
         justify-content: center;          
         font-family: "Barlow";
@@ -76,6 +77,11 @@
               margin-bottom: 0px;
               text-align: right;
             }
+
+            p{
+              margin: 0px;
+              text-align: right;
+            }
           }
 
           .avatar {
@@ -92,5 +98,3 @@
     }   
     }
     
-  }
-}

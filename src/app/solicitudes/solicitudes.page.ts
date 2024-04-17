@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../header/header.service';
 
 @Component({
   selector: 'app-solicitudes',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitudesPage implements OnInit {
 
-  constructor() { }
+  private url = '/solicitudes';
 
+  constructor(private HeaderService: HeaderService) {
+  }
   ngOnInit() {
   }
 
+  ionViewWillEnter() {
+    this.HeaderService.setPageContent(this.url, 'Solicitudes', 'Solicitudes');
+  }
 }

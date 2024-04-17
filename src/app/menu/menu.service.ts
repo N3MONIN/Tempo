@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MenuService {
-  private appPages = [    { title: 'Dashboard', url: '/dashboard', icon: 'home' },
-    { title: 'Empleados', url: '/empleados', icon: 'calendar' },
-    { title: 'Calendario Laboral', url: '/calendario-laboral', icon: 'calendar' },
-    { title: 'Informes', url: '/informes', icon: 'calendar' },
-    { title: 'Incidencias', url: '/incidencias', icon: 'alert' },
-    { title: 'Solicitudes', url: '/solicitudes', icon: 'calendar' },
-    { title: 'Perfil Empresa', url: '/perfil-empresa', icon: 'calendar' },
-    { title: 'Configuración', url: '/configuracion', icon: 'calendar' },
+  private appPages = [    { title: 'Dashboard', url: '/dashboard', icon: '/assets/icons/icon-dashboard.svg' },
+    { title: 'Empleados', url: '/empleados', icon: '/assets/icons/icon-empleados.svg' },
+    { title: 'Calendario Laboral', url: '/calendario-laboral', icon: '/assets/icons/icon-calendario.svg' },
+    { title: 'Informes', url: '/informes', icon: '/assets/icons/icon-informes.svg' },
+    { title: 'Incidencias', url: '/incidencias', icon: '/assets/icons/icon-incidencias.svg' },
+    { title: 'Solicitudes', url: '/solicitudes', icon: '/assets/icons/icon-solicitudes.svg' },
+    { title: 'Perfil Empresa', url: '/perfil-empresa', icon: '/assets/icons/icon-perfildeempresa.svg' },
+    { title: 'Configuración', url: '/configuracion', icon: '/assets/icons/icon-configuracion.svg' },
   ];
 
   constructor() {}

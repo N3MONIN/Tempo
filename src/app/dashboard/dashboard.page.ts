@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../header/header.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPage implements OnInit {
 
-  constructor() { }
+  private url = '/dashboard';
+
+  constructor(private HeaderService: HeaderService) {
+    
+  }
 
   ngOnInit() {
   }
 
+
+  ionViewWillEnter() {
+    this.HeaderService.setPageContent(this.url, 'Dashboard', 'Hola, Juan Carlos. ¡Bienvenido al panel de administración de Tempo!');
+  }
 }

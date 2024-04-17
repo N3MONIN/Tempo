@@ -1,5 +1,30 @@
-ion-split-pane {
-  z-index: 100;
-  width: 14.1%;
-  border-right: solid 1px #dbdbdb;
+ion-app {
+  display: flex;
+  flex-direction: row;
+
+  /*background: conic-gradient(
+    from 135deg at 52.72% 30.87%,
+    rgba(98, 132, 255, 0.3) 30.45651286840439deg,
+    rgba(255, 114, 182, 0.3) 51.42127811908722deg,
+    rgba(249, 229, 232, 0.3) 94.69802856445312deg,
+    rgba(151, 225, 212, 0.3) 169.1589081287384deg
+  );*/
+
+
+  .menu {
+    width: 14%;
+    border-right: 1px solid white;
+  }
+
+  .contenido-header {
+    width: 86%;
+  }
+  
+  
 }
+
+ion-content{
+  --ion-background-color: transparent;
+  
+}
+
