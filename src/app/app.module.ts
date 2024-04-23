@@ -24,7 +24,8 @@ import { HeaderService } from "./header/header.service";
     IonicModule.forRoot(),
     ReactiveFormsModule,
     CommonModule,
-    FormsModule,
+    FormsModule
+    
   ],
   providers: [HeaderService],
   bootstrap: [AppComponent],

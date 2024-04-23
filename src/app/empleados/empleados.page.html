@@ -1,0 +1,256 @@
+<div class="responsive-table-container">
+  <dx-data-grid
+    #grid
+    [dataSource]=" empleados"
+    [showBorders]="true"
+    [allowColumnResizing]="true"
+    [columnAutoWidth]="false"
+    [allowColumnReordering]="true"
+    [rowAlternationEnabled]="false"
+    [height]="'82vh'"
+  >
+    <dxo-load-panel [showPane]="false"></dxo-load-panel>
+
+    <dxo-scrolling mode="virtual"></dxo-scrolling>
+
+    <dxo-selection
+      selectAllMode="allPages"
+      showCheckBoxesMode="always"
+      mode="multiple"
+    ></dxo-selection>
+
+    <dxo-toolbar>
+      <dxi-item name="searchPanel" locateInMenu="auto"></dxi-item>
+      <dxi-item location="after" locateInMenu="auto" class="filtros">
+        <dx-button
+          text="Filtros"
+          icon="filter"
+          type="default"
+          stylingMode="contained"
+          (onClick)="toggleFiltros()"
+        ></dx-button>
+      </dxi-item>
+      <dxi-item name="exportButton" text="Exportar" class="export"></dxi-item>
+      <dxi-item name="exportButton" text="Importar" class="export"></dxi-item>
+
+      <dxi-item location="after" locateInMenu="auto">
+        <dx-button
+          text="Nuevo empleado"
+          icon="plus"
+          type="default"
+          stylingMode="contained"
+          (onClick)="mostrarPopup()"
+        ></dx-button>
+      </dxi-item>
+    </dxo-toolbar>
+
+    <dxo-export
+      [enabled]="true"
+      text="Exportar"
+      [allowExportSelectedData]="true"
+      [formats]="['xlsx', 'pdf']"
+      class="export"
+    ></dxo-export>
+
+    <dxo-sorting mode="multiple"></dxo-sorting>
+
+    <dxo-header-filter [visible]="true"></dxo-header-filter>
+
+    <dxo-search-panel
+      [visible]="true"
+      placeholder="Buscar por nombre, departamento, dni, número..."
+      [width]="1025"
+      class="buscador"
+    ></dxo-search-panel>
+
+    <dxi-column
+      dataField="Nombre"
+      caption="Nombre"
+      [hidingPriority]="5"
+      [minWidth]="150"
+    >
+      <dxo-header-filter [visible]="false"></dxo-header-filter>
+    </dxi-column>
+
+    <dxi-column
+      dataField="DNI"
+      caption="DNI"
+      [hidingPriority]="6"
+      [minWidth]="150"
+    >
+      <dxo-header-filter [visible]="false"></dxo-header-filter>
+    </dxi-column>
+
+    <dxi-column
+      dataField="Email"
+      caption="Email"
+      [hidingPriority]="4"
+      [minWidth]="150"
+    >
+      <dxo-header-filter [visible]="false"></dxo-header-filter>
+    </dxi-column>
+
+    <dxi-column
+      dataField="Telefono"
+      caption="Telefono"
+      [hidingPriority]="3"
+      [minWidth]="150"
+    >
+      <dxo-header-filter [visible]="false"></dxo-header-filter>
+    </dxi-column>
+
+    <dxi-column
+      dataField="Departamento"
+      caption="Departamento"
+      [hidingPriority]="2"
+      [minWidth]="150"
+    >
+      <dxo-header-filter [visible]="false"></dxo-header-filter>
+    </dxi-column>
+
+    <dxi-column
+      dataField="Horarios"
+      caption="Horarios"
+      [hidingPriority]="1"
+      [minWidth]="150"
+    >
+      <dxo-header-filter [visible]="false"></dxo-header-filter>
+    </dxi-column>
+
+    <dxi-column
+      dataField="Estados"
+      caption="Estado"
+      [hidingPriority]="1"
+      [minWidth]="150"
+    >
+
+      <dxo-header-filter [visible]="false"></dxo-header-filter>
+    </dxi-column>
+
+    
+  </dx-data-grid><div class="total-empleados">
+      <p class="todos">Total Empleados <span class="num-empleados">{{ empleados.length }}</span> </p>
+      <p class="activos">Empleados Activos <span class="num-empleados">{{ empleados.length }}</span> </p>
+
+    </div>
+</div>
+
+<dx-popup
+  [(visible)]="popupVisible"
+  [showTitle]="true"
+  title="Añadir Empleado"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="true"
+  [width]="750"
+  [minHeight]="520"
+  [height]="100"
+>
+  <form #form="ngForm" (ngSubmit)="addEmpleado()" class="formulario-add">
+    <div>
+      <label for="Nombre">Nombre</label>
+      <input
+        type="text"
+        id="Nombre"
+        name="Nombre"
+        [(ngModel)]="nuevoEmpleado.Nombre"
+        required
+      />
+      <div
+        *ngIf="form.submitted && form.form.controls['Nombre'].errors?.['required']"
+      >
+        Campo obligatorio
+      </div>
+    </div>
+    <div>
+      <label for="DNI">DNI</label>
+      <input
+        type="text"
+        id="DNI"
+        name="DNI"
+        [(ngModel)]="nuevoEmpleado.DNI"
+        required
+      />
+      <div
+        *ngIf="form.submitted && form.form.controls['DNI'].errors?.['required']"
+      >
+        Campo obligatorio
+      </div>
+    </div>
+    <div>
+      <label for="Email">Email</label>
+      <input
+        type="text"
+        id="Email"
+        name="Email"
+        [(ngModel)]="nuevoEmpleado.Email"
+        required
+      />
+      <div
+        *ngIf="form.submitted && form.form.controls['Email'].errors?.['required']"
+      >
+        Campo obligatorio
+      </div>
+    </div>
+    <div>
+      <label for="Telefono">Telefono</label>
+      <input
+        type="text"
+        id="Telefono"
+        name="Telefono"
+        [(ngModel)]="nuevoEmpleado.Telefono"
+        required
+      />
+      <div
+        *ngIf="form.submitted && form.form.controls['Telefono'].errors?.['required']"
+      >
+        Campo obligatorio
+      </div>
+    </div>
+    <div>
+      <label for="Departamento">Departamento</label>
+      <input
+        type="text"
+        id="Departamento"
+        name="Departamento"
+        [(ngModel)]="nuevoEmpleado.Departamento"
+        required
+      />
+      <div
+        *ngIf="form.submitted && form.form.controls['Departamento'].errors?.['required']"
+      >
+        Campo obligatorio
+      </div>
+    </div>
+    <div>
+      <label for="Horarios">Horarios</label>
+      <input
+        type="text"
+        id="Horarios"
+        name="Horarios"
+        [(ngModel)]="nuevoEmpleado.Horarios"
+        required
+      />
+      <div
+        *ngIf="form.submitted && form.form.controls['Horarios'].errors?.['required']"
+      >
+        Campo obligatorio
+      </div>
+    </div>
+    <div>
+      <label for="Estados">Estados</label>
+      <input
+        type="text"
+        id="Estados"
+        name="Estados"
+        [(ngModel)]="nuevoEmpleado.Estados"
+        required
+      />
+      <div
+        *ngIf="form.submitted && form.form.controls['Estados'].errors?.['required']"
+      >
+        Campo obligatorio
+      </div>
+    </div>
+    <button type="submit">Añadir Empleado</button>
+  </form>
+</dx-popup>

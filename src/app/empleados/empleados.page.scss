@@ -1,0 +1,289 @@
+::ng-deep {
+  app-empleados {
+    padding: 14px 28px;
+    background: #d6f4f1;
+    dx-data-grid {
+      .dx-datagrid-header-panel {
+        padding: 0px;
+        border-radius: 8px 8px 0px 0px;
+        background: #fff;
+        padding: 10px;
+        .dx-toolbar-after {
+          padding: 0px;
+          width: 100%;
+
+          .dx-item {
+            .dx-datagrid-search-panel {
+              margin-left: 0px;
+              border-radius: 8px;
+              border: 0.5px solid #ebebeb;
+              background: #f7f7f7;
+
+              .dx-texteditor-input-container {
+                .dx-placeholder,
+                .dx-texteditor-input {
+                  color: #acacac;
+                  font-family: "Barlow";
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                  letter-spacing: 0.1px;
+
+                  &::before {
+                    padding: 0px 0px 0px 46px;
+                  }
+                }
+
+                .dx-texteditor-input {
+                  padding: 10px 46px;
+                }
+
+                .dx-icon {
+                  &::before {
+                    color: #acacac;
+                    font-size: 18px;
+                    font-family: DXIcons;
+                  }
+                }
+              }
+            }
+
+            dx-button {
+              border-radius: 8px;
+              background: #696cd5;
+              box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.12),
+                0px 2px 4px -1px rgba(0, 0, 0, 0.07);
+
+              .dx-button-content {
+                padding: 10px 12px;
+                .dx-button-text {
+                  color: #fff;
+                  font-family: "Barlow";
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: normal;
+                  letter-spacing: 0.1px;
+                  text-transform: none;
+                }
+
+                .dx-icon {
+                  margin-right: 6px;
+                  &::before {
+                    font-size: 18px;
+                  }
+                }
+              }
+            }
+
+            .filtros {
+              dx-button {
+                border-radius: 8px;
+                border: 0.5px solid#ebebeb;
+                background: #f7f7f7;
+
+                .dx-button-content {
+                  padding: 10px 12px;
+                  .dx-button-text {
+                    color: #2e4265;
+                    font-family: "Barlow";
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: 0.1px;
+                  }
+
+                  .dx-icon {
+                    margin-right: 6px;
+                    &::before {
+                      font-size: 18px;
+                      color: #a0aec0;
+                    }
+                  }
+                }
+              }
+            }
+
+            .dx-item-content {
+              display: flex;
+              align-items: center;
+              div {
+                color: #2e4265;
+                font-family: "Barlow";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: 0.1px;
+              }
+              .dx-datagrid-export-button {
+              }
+            }
+
+            &:nth-child(3) {
+              .dx-item-content {
+                border-radius: 8px;
+                border: 0.5px solid#ebebeb;
+                background: #f7f7f7;
+
+                .dx-datagrid-export-button {
+                  .dx-item-content {
+                    border-radius: 0px;
+                    border: 0;
+                    background: none;
+                    .dx-button-content {
+                      padding-right: 0px;
+                    }
+                  }
+                }
+              }
+            }
+
+            &:nth-child(4) {
+              .dx-item-content {
+                border-radius: 8px;
+                border: 0.5px solid#ebebeb;
+                background: #f7f7f7;
+
+                .dx-datagrid-export-button {
+                  .dx-item-content {
+                    border-radius: 0px;
+                    border: 0;
+                    background: none;
+
+                    .dx-button-content {
+                      padding-right: 0px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .dx-editor-filled::after {
+              display: none;
+            }
+
+            .dx-editor-filled::before {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .dx-datagrid-headers {
+        border-left: 0px !important;
+        border-right: 0px !important;
+        tbody {
+          .dx-command-select {
+            .dx-checkbox-container {
+              .dx-checkbox-icon {
+                border-radius: 50px;
+                border: 1px solid #a0aec0;
+                width: 16px;
+                height: 16px;
+              }
+            }
+          }
+
+          .dx-datagrid-action {
+            padding: 12px !important;
+            .dx-datagrid-text-content {
+              color: #718096;
+              font-family: "Barlow";
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+            }
+          }
+        }
+      }
+
+      .dx-datagrid-rowsview {
+        border-left: 0px !important;
+        border-right: 0px !important;
+        border-bottom: 0px !important;
+        border-top: 1px solid #ebebeb;
+        .dx-scrollable-content {
+          .dx-datagrid-table {
+            .dx-row {
+              &:hover {
+                background-color: #d6f4f1;
+              }
+              .dx-command-select {
+                .dx-checkbox-container {
+                  .dx-checkbox-icon {
+                    border-radius: 50px;
+                    border: 1px solid #a0aec0;
+                    width: 16px;
+                    height: 16px;
+                  }
+                }
+              }
+
+              td {
+                color: #252f40;
+                font-family: "Barlow";
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+              }
+            }
+          }
+        }
+
+        .dx-scrollable-scrollbar {
+          .dx-scrollable-scroll {
+            height: 100% !important;
+
+            .dx-scrollable-scroll-content {
+              border-radius: 100px;
+              background: #03ccb9;
+              height: 212px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .total-empleados {
+    border-top: 1px solid var(--Color-Gris-B, #ebebeb);
+    background: var(--Color-Blanco, #fff);
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    .todos {
+      margin: 0px;
+      color: #2e4265;
+      font-family: "Barlow";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      padding-right: 10px;
+      border-right: 1px solid #718096 ;
+
+      .num-empleados {
+        font-weight: 600;
+      }
+    }
+
+    .activos{
+      margin: 0px;
+      color: #03CCB9;
+      font-family: 'Barlow';
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      padding-left: 10px;
+      .num-empleados {
+        font-weight: 600;
+      }
+    }
+  }
+}
